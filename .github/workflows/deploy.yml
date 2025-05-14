@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: FTP Deploy
+      - name: FTP Deploy Theme
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.aquashineexteriors.co.uk
+          server: ftp.htapc.co.in
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./  # Upload everything from root of the repo
-          server-dir: /wp-content/themes/easy-wp-blog-theme/
+          local-dir: easy-wp-blog-theme/
+          server-dir: public_html/wp-content/themes/easy-wp-blog-theme/
