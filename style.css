@@ -1,0 +1,104 @@
+/*
+Theme Name: Easy WP Blog Theme
+Theme URI: https://example.com/
+Author: Your Name
+Author URI: https://example.com/
+Description: A simple blog theme with Material Design styling.
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: easy-wp-blog-theme
+*/
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.5rem 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #6200ea;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #6200ea;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+article {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #eee;
+    color: #666;
+    margin-top: 2rem;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+}
+
+aside {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: #fff8e1;
+    border-left: 5px solid #ffb300;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.widget h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.easywp-slick-posts .card {
+    border: none;
+    transition: transform 0.2s ease;
+}
+.easywp-slick-posts .card:hover {
+    transform: scale(1.02);
+}
+
