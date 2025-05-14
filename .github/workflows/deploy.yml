@@ -20,4 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./  # Upload everything from root of the repo
-          server-dir: wp-content/themes/easy-wp-blog-theme
+          server-dir: /wp-content/themes/easy-wp-blog-theme
