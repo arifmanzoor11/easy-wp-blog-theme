@@ -1,25 +1,27 @@
-name: Upload Theme to cPanel
+name: Upload Theme to FTP
 
 on:
   push:
     branches:
-      - master  # or main, as needed
+      - master  # or main
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Debug — List files
-        run: ls -la
+      - name: Debug - Show repo structure
+        run: ls -R
 
-      - name: FTP Deploy Theme
+      - name: Deploy to FTP (cPanel)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.aquashineexteriors.co.uk
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./  # Adjust if your theme is in a subfolder
+          port: 21
+          local-dir: ./  # or ./easy-wp-blog-theme/ if it's inside a folder
+          server-dir: wp-content/themes/easy-wp-blog-theme/
