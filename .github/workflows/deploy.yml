@@ -23,4 +23,3 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./  # Adjust if your theme is in a subfolder
-          server-dir: wp-content/themes/easy-wp-blog-theme/
