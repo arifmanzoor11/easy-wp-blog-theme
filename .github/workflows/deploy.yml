@@ -3,7 +3,7 @@ name: Upload Theme to cPanel
 on:
   push:
     branches:
-      - master  # or your deployment branch
+      - master  # or main, as needed
 
 jobs:
   ftp-deploy:
@@ -13,11 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Debug — List files
+        run: ls -la
+
       - name: FTP Deploy Theme
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.htapc.co.in
+          server: ftp.aquashineexteriors.co.uk
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: easy-wp-blog-theme/
-          server-dir: public_html/wp-content/themes/easy-wp-blog-theme/
+          local-dir: ./  # Adjust if your theme is in a subfolder
+          server-dir: wp-content/themes/easy-wp-blog-theme/
