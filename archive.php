@@ -13,11 +13,20 @@
 
         <?php
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+        $category = get_queried_object();
         $args = [
           'post_type'      => 'post',
           'posts_per_page' => 10,
           'paged'          => $paged,
+          'tax_query'      => [
+            [
+              'taxonomy' => 'category',
+              'field'    => 'slug',
+              'terms'    => $category->slug,
+            ],
+          ],
         ];
+        
         $blog_query = new WP_Query($args);
         ?>
 
