@@ -14,8 +14,7 @@ Text Domain: easy-wp-blog-theme
 Tags: blog, news, responsive, accessibility-ready, custom-logo, featured-images, editor-style
 */
 
-body{font-family: "Inter", sans-serif;}
-
+body{  font-family: "Inter", sans-serif;}
 nav {
     display: flex;
     justify-content: space-between;
