@@ -24,11 +24,29 @@ function easywp_post_slider_shortcode($atts) {
                         <div class="card-img-top">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('medium', ['class' => 'img-fluid', 'alt' => get_the_title()]); ?>
-                            <?php else : ?>
-                                <!-- Fallback SVG image -->
-                                <svg class="img-fluid w-100" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="<?php the_title(); ?>">
-                                    <rect width="100%" height="100%" fill="#ddd"/>
-                                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#999" font-size="20">
+                                <?php else : ?>
+                                <?php
+                                // Generate random color in hex
+                                 // Classy modern color palette
+                                 $modern_colors = [
+                                    '#3E3E3E', // Charcoal Black
+                                    '#2C3E50', // Deep Navy Blue
+                                    '#1C1C1C', // Jet Black
+                                    '#4B5320', // Army Green
+                                    '#8D8741', // Olive Gold
+                                    '#C0B283', // Warm Beige
+                                    '#A67B5B', // Luxe Copper
+                                    '#BFAF80', // Soft Gold
+                                    '#8C7853', // Bronze
+                                    '#D5CABD', // Pale Champagne
+                                ];
+                                
+                                $rand_color = $modern_colors[array_rand($modern_colors)];
+                                ?>
+                                <!-- Fallback SVG with random color -->
+                                <svg class="img-fluid w-100" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="<?php the_title(); ?>">
+                                    <rect width="100%" height="100%" fill="<?php echo esc_attr($rand_color); ?>"/>
+                                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="30">
                                         No Image
                                     </text>
                                 </svg>
