@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           
-          server-dir: /wp-content/themes/your-theme-folder/  # A
+          server-dir: /wp-content/themes/easy-wp-blog-theme/  # A
           protocol: ftp
           dry-run: false     # Set to true if testing
           exclude: |
