@@ -5,7 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> <title><?php wp_title(); ?></title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito&display=swap" rel="stylesheet">
+  <style>
+
+/* Base dropdown menu styling */
+.dropdown-menu {
+    background-color: #343a40; /* dark background */
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+    min-width: 10rem;
+  }
+  
+  /* Dropdown items */
+  .dropdown-menu .dropdown-item {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Hover effect */
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
+    background-color: #495057;
+    color: #fff;
+  }
+  
+  
+  /* Show dropdown when open via Bootstrap JS */
+  .navbar-nav .dropdown.show .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Better mobile dropdown spacing */
+  @media (max-width: 991.98px) {
+    .dropdown-menu {
+      position: static;
+      float: none;
+      width: 100%;
+      margin-top: 0;
+    }
+  
+    .dropdown-menu .dropdown-item {
+      padding-left: 2rem;
+    }
+  }
+
+  </style>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

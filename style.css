@@ -92,49 +92,6 @@ aside {
     transform: scale(1.02);
 }
 .slick-posts-anchor{text-decoration: none; color:inherit;}
-/* Base dropdown menu styling */
-.dropdown-menu {
-    background-color: #343a40; /* dark background */
-    border: none;
-    padding: 0.5rem 0;
-    border-radius: 0.25rem;
-    min-width: 10rem;
-  }
-  
-  /* Dropdown items */
-  .dropdown-menu .dropdown-item {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.2s ease;
-  }
-  
-  /* Hover effect */
-  .dropdown-menu .dropdown-item:hover,
-  .dropdown-menu .dropdown-item:focus {
-    background-color: #495057;
-    color: #fff;
-  }
-  
-  
-  /* Show dropdown when open via Bootstrap JS */
-  .navbar-nav .dropdown.show .dropdown-menu {
-    display: block;
-  }
-  
-  /* Optional: Better mobile dropdown spacing */
-  @media (max-width: 991.98px) {
-    .dropdown-menu {
-      position: static;
-      float: none;
-      width: 100%;
-      margin-top: 0;
-    }
-  
-    .dropdown-menu .dropdown-item {
-      padding-left: 2rem;
-    }
-  }
-
   .pagination {
     justify-content: center;
   }
