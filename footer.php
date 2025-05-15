@@ -3,11 +3,6 @@
         <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
     </div>
 </footer>
-<?php wp_footer(); ?>
-</body>
-</html>
-
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const dropdowns = document.querySelectorAll(".menu-item-has-children");
@@ -32,5 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<?php wp_footer(); ?>
+</body>
+</html>
+
+
+
 
 

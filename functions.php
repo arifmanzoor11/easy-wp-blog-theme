@@ -11,24 +11,12 @@ add_action('after_setup_theme', 'easywp_setup');
 
 // Enqueue styles and scripts
 function easywp_scripts() {
-   
-
-    // Bootstrap CSS
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css', [], '5.3.0');
-
-    // Slick Carousel CSS
+    wp_enqueue_style('easywp-style', get_stylesheet_uri());
     wp_enqueue_style('slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
     wp_enqueue_style('slick-theme-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css');
-
-     // Main stylesheet
-     wp_enqueue_style('easywp-style', get_stylesheet_uri());
-     
-    // Bootstrap JS Bundle
+    
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', [], '5.3.0', true);
-
-    // jQuery (WordPress includes it by default, no need to enqueue again)
-
-    // Slick JS
     wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
 
     // Custom Slick init
