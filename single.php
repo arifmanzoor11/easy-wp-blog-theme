@@ -3,6 +3,9 @@
 <main>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <article>
+        <?php if (has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail('medium', ['class' => 'img-fluid', 'alt' => get_the_title()]); ?>
+         <?php endif; ?>
             <h1><?php the_title(); ?></h1>
             <div><?php the_content(); ?></div>
         </article>

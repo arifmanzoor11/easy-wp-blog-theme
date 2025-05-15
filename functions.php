@@ -64,45 +64,4 @@ function easywp_widgets_init() {
     ]);
 }
 add_action('widgets_init', 'easywp_widgets_init');
-
-// Shortcode to show posts in a Slick slider by category
-function easywp_post_slider_shortcode($atts) {
-    $atts = shortcode_atts([
-        'category' => '',
-        'posts'    => 6,
-    ], $atts);
-
-    $query = new WP_Query([
-        'posts_per_page' => (int) $atts['posts'],
-        'category_name'  => sanitize_text_field($atts['category']),
-    ]);
-
-    if (!$query->have_posts()) return '<p>No posts found.</p>';
-
-    ob_start();
-    ?>
-    <div class="easywp-slick-posts">
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="post-slide p-3">
-                <div class="card h-100 shadow-sm">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="card-img-top">
-                            <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="card-body">
-                        <h5 class="card-title"><?php the_title(); ?></h5>
-                        <p class="card-text"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                        <a href="<?php the_permalink(); ?>" class="btn btn-dark btn-sm">Read More</a>
-                    </div>
-                </div>
-            </div>
-        <?php endwhile; wp_reset_postdata(); ?>
-    </div>
-    <?php
-    return ob_get_clean();
-}
-add_shortcode('easywp_post_slider', 'easywp_post_slider_shortcode');
-
-
-
+include_once('inc/easywp_post_slider_shortcode.php');

@@ -32,14 +32,10 @@ nav li {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     transition: background 0.3s ease;
 }
 
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
 
 main {
     max-width: 1200px;
@@ -101,4 +97,4 @@ aside {
 .easywp-slick-posts .card:hover {
     transform: scale(1.02);
 }
-
+.slick-posts-anchor{text-decoration: none; color:inherit;}
