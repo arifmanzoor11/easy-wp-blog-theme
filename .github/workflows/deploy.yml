@@ -17,6 +17,7 @@ jobs:
       - name: 🧾 Show Project Structure (Debug)
         run: ls -laR
 
+        
       - name: 📤 Deploy to FTP Root Directory
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
