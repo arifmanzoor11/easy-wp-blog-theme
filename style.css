@@ -41,9 +41,6 @@ main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 h1, h2, h3 {
@@ -98,3 +95,76 @@ aside {
     transform: scale(1.02);
 }
 .slick-posts-anchor{text-decoration: none; color:inherit;}
+/* Base dropdown menu styling */
+.dropdown-menu {
+    background-color: #343a40; /* dark background */
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+    min-width: 10rem;
+  }
+  
+  /* Dropdown items */
+  .dropdown-menu .dropdown-item {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Hover effect */
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
+    background-color: #495057;
+    color: #fff;
+  }
+  
+  /* Align dropdown under parent */
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none; /* Hidden by default, shown on open */
+  }
+  
+  /* Show dropdown when open via Bootstrap JS */
+  .navbar-nav .dropdown.show .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Better mobile dropdown spacing */
+  @media (max-width: 991.98px) {
+    .dropdown-menu {
+      position: static;
+      float: none;
+      width: 100%;
+      margin-top: 0;
+    }
+  
+    .dropdown-menu .dropdown-item {
+      padding-left: 2rem;
+    }
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+  
+  .page-numbers {
+    padding: 8px 12px;
+    margin: 2px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .page-numbers.current {
+    background: #343a40;
+    color: #fff;
+    border-color: #343a40;
+  }
+
+  
+  
+  .dropdown-menu.show{background-color: #000;}

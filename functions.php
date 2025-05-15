@@ -65,3 +65,19 @@ function easywp_widgets_init() {
 }
 add_action('widgets_init', 'easywp_widgets_init');
 include_once('inc/easywp_post_slider_shortcode.php');
+
+
+
+function mytheme_widgets_init() {
+    register_sidebar([
+      'name'          => __('Sidebar', 'mytheme'),
+      'id'            => 'sidebar-1',
+      'description'   => __('Main sidebar area'),
+      'before_widget' => '<div class="mb-4">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h5 class="mb-2">',
+      'after_title'   => '</h5>',
+    ]);
+  }
+  add_action('widgets_init', 'mytheme_widgets_init');
+  
