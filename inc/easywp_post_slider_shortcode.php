@@ -2,14 +2,51 @@
 // Shortcode to show posts in a Slick slider by category with fallback SVG image
 function easywp_post_slider_shortcode($atts) {
     $atts = shortcode_atts([
-        'category' => '',
-        'posts'    => 6,
+        'category'       => '',
+        'posts'          => 6,
+        'post_type'      => 'post',
+        'order'          => 'DESC',
+        'orderby'        => 'date',
+        'tag'            => '',
+        'author'         => '',
+        'post_status'    => 'publish',
+        'exclude'        => '', // comma-separated IDs
+        'include'        => '', // comma-separated IDs
+        'meta_key'       => '',
+        'meta_value'     => '',
+        'paged'          => 1,
     ], $atts, 'easywp_post_slider');
 
-    $query = new WP_Query([
+    // Convert comma-separated include/exclude to arrays
+    $include_ids = $atts['include'] ? array_map('intval', explode(',', $atts['include'])) : [];
+    $exclude_ids = $atts['exclude'] ? array_map('intval', explode(',', $atts['exclude'])) : [];
+
+    $query_args = [
+        'post_type'      => sanitize_text_field($atts['post_type']),
         'posts_per_page' => (int) $atts['posts'],
         'category_name'  => sanitize_text_field($atts['category']),
-    ]);
+        'tag'            => sanitize_text_field($atts['tag']),
+        'order'          => sanitize_text_field($atts['order']),
+        'orderby'        => sanitize_text_field($atts['orderby']),
+        'author'         => $atts['author'],
+        'post_status'    => sanitize_text_field($atts['post_status']),
+        'paged'          => (int) $atts['paged'],
+    ];
+
+    if (!empty($include_ids)) {
+        $query_args['post__in'] = $include_ids;
+    }
+
+    if (!empty($exclude_ids)) {
+        $query_args['post__not_in'] = $exclude_ids;
+    }
+
+    if (!empty($atts['meta_key'])) {
+        $query_args['meta_key'] = sanitize_text_field($atts['meta_key']);
+        $query_args['meta_value'] = sanitize_text_field($atts['meta_value']);
+    }
+
+    $query = new WP_Query($query_args);
 
     if (!$query->have_posts()) {
         return '<p>No posts found.</p>';
@@ -47,8 +84,10 @@ function easywp_post_slider_shortcode($atts) {
                                 <svg class="img-fluid w-100" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="<?php the_title(); ?>">
                                     <rect width="100%" height="100%" fill="<?php echo esc_attr($rand_color); ?>"/>
                                     <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="30">
-                                        No Image
+                                    
+                                    No Image
                                     </text>
+                                    
                                 </svg>
                             <?php endif; ?>
                         </div>
