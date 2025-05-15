@@ -23,5 +23,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./  # or ./easy-wp-blog-theme/ if it's inside a folder
-          server-dir: wp-content/themes/easy-wp-blog-theme/
+          local-dir: ./
