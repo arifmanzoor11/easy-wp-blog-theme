@@ -1,26 +1,35 @@
-name: Upload Theme to FTP
+name: 🚀 Upload Project to FTP Root
 
 on:
   push:
     branches:
-      - master  # or main
+      - master  # Change to 'main' if needed
 
 jobs:
   ftp-deploy:
+    name: 📦 FTP Deploy to Root
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 🛎️ Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Debug - Show repo structure
-        run: ls -R
+      - name: 🧾 Show Project Structure (Debug)
+        run: ls -laR
 
-      - name: Deploy to FTP (cPanel)
+      - name: 📤 Deploy to FTP Root Directory
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.aquashineexteriors.co.uk
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./
+          local-dir: ./      # Current repo root
+          server-dir: /      # Root of your FTP account
+          protocol: ftp
+          dry-run: false     # Set to true if testing
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+            **/README.md
