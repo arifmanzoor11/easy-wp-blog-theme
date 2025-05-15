@@ -32,7 +32,8 @@ function easywp_post_slider_shortcode($atts) {
         'post_status'    => sanitize_text_field($atts['post_status']),
         'paged'          => (int) $atts['paged'],
     ];
-
+    $category_slug = sanitize_text_field($atts['category']);
+    $category = get_category_by_slug($category_slug);
     if (!empty($include_ids)) {
         $query_args['post__in'] = $include_ids;
     }
@@ -47,15 +48,15 @@ function easywp_post_slider_shortcode($atts) {
     }
 
     $query = new WP_Query($query_args);
-
     if (!$query->have_posts()) {
         return '<p>No posts found.</p>';
     }
     ob_start();
+    echo '<h2 class="easywp-slider-heading">' . esc_html($category->name) . '</h2>';
     ?>
-    <div class="easywp-slick-posts">
+    <div class="easywp-slick-posts ">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="post-slide p-3">
+            <div class="post-slide p-2">
                 <div class="card h-100 shadow-sm">
                     <a href="<?php the_permalink(); ?>" class="slick-posts-anchor">
                         <div class="card-img-top">
@@ -93,7 +94,7 @@ function easywp_post_slider_shortcode($atts) {
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?php the_title(); ?></h5>
-                            <p class="card-text"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 15)); ?></p>
+                            <p class="card-text"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 10)); ?></p>
                             <br>
                             <a href="<?php the_permalink(); ?>" class="btn btn-dark btn-sm">Read More</a>
                         </div>

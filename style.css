@@ -1,15 +1,20 @@
 /*
 Theme Name: Easy WP Blog Theme
-Theme URI: https://example.com/
+Theme URI: https://example.com/easy-wp-blog-theme
 Author: Your Name
-Author URI: https://example.com/
-Description: A simple blog theme with Material Design styling.
-Version: 1.1
+Author URI: https://example.com
+Description: A clean, lightweight, and responsive blog theme inspired by Material Design. Ideal for bloggers, writers, and personal websites.
+Version: 1.2.0
+Requires at least: 5.0
+Tested up to: 6.5
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: easy-wp-blog-theme
+Tags: blog, news, responsive, accessibility-ready, custom-logo, featured-images, editor-style
 */
 
+body{font-family: "Inter", sans-serif;}
 
 nav {
     display: flex;
@@ -24,11 +29,6 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-
-nav li {
-    padding: 0.5rem 1rem;
-}
-
 nav a {
     color: white;
     text-decoration: none;
@@ -38,9 +38,7 @@ nav a {
 
 
 main {
-    max-width: 1200px;
     margin: 2rem auto;
-    padding: 1.5rem;
 }
 
 h1, h2, h3 {
@@ -118,14 +116,6 @@ aside {
     color: #fff;
   }
   
-  /* Align dropdown under parent */
-  .navbar-nav .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none; /* Hidden by default, shown on open */
-  }
   
   /* Show dropdown when open via Bootstrap JS */
   .navbar-nav .dropdown.show .dropdown-menu {

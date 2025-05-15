@@ -25,7 +25,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          dangerous-clean-slate: true
+          # dangerous-clean-slate: true
           server-dir: /wp-content/themes/easy-wp-blog-theme/  # A
           protocol: ftp
           dry-run: false     # Set to true if testing

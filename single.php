@@ -1,34 +1,61 @@
 <?php get_header(); ?>
-<main class="container"> 
+
+<main class="container py-5">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="row">
-       <div class="col-lg-8">
-            <article class="border rounded bg-light p-3">
-            <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('medium', ['class' => 'img-fluid', 'alt' => get_the_title()]); ?>
-            <?php endif; ?>
-                <h1 style="font-size:2rem" class="mt-4 fw-bold"><?php the_title(); ?></h1>
-                <div><?php the_content(); ?></div>
-        
-            </article>
+      
+      <!-- Main Post Content -->
+      <div class="col-lg-8">
+        <article class="border rounded bg-light p-4 mb-4 shadow-sm" role="article">
+          
+          <?php if (has_post_thumbnail()) : ?>
+            <div class="mb-3">
+              <?php the_post_thumbnail('large', [
+                'class' => 'img-fluid rounded',
+                'alt'   => get_the_title(),
+                'loading' => 'lazy'
+              ]); ?>
+            </div>
+          <?php endif; ?>
+
+          <header>
+            <h1 class="h2 fw-bold mb-3"><?php the_title(); ?></h1>
+            <p class="text-muted small mb-4">
+              Published on <?php echo get_the_date(); ?> by <?php the_author(); ?>
+            </p>
+          </header>
+
+          <section class="post-content">
+            <?php the_content(); ?>
+          </section>
+          
+          <!-- Post pagination (for multi-page posts) -->
+          <?php wp_link_pages([
+            'before' => '<div class="page-links mt-4"><strong>Pages:</strong> ',
+            'after'  => '</div>',
+          ]); ?>
+        </article>
+
+        <!-- Comments -->
+        <?php comments_template(); ?>
       </div>
-      <!-- Sidebar Area -->
-      <div class="col-lg-4">
+
+      <!-- Sidebar -->
+      <aside class="col-lg-4">
         <?php if (is_active_sidebar('sidebar-1')) : ?>
-          <aside class="bg-light p-3 border rounded">
+          <div class="bg-light p-3 border rounded mb-4">
             <?php dynamic_sidebar('sidebar-1'); ?>
-          </aside>
+          </div>
         <?php else : ?>
-          <aside class="bg-light p-3 border rounded">
+          <div class="bg-light p-3 border rounded mb-4">
             <h5>Sidebar</h5>
-            <p>Add widgets from Appearance > Widgets</p>
-          </aside>
+            <p>Add widgets from Appearance > Widgets.</p>
+          </div>
         <?php endif; ?>
-      </div>
-  </div>
-    <?php comments_template(); ?>
+      </aside>
+
+    </div>
   <?php endwhile; endif; ?>
 </main>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
