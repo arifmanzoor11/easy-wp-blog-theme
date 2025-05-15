@@ -36,15 +36,15 @@ function easywp_scripts() {
     wp_add_inline_script('slick-js', "
         jQuery(document).ready(function($) {
             $('.easywp-slick-posts').slick({
-                slidesToShow: 3,
+                slidesToShow: 4,
                 slidesToScroll: 1,
                 dots: true,
                 arrows: true,
                 autoplay: true,
                 autoplaySpeed: 3000,
                 responsive: [
-                    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-                    { breakpoint: 768, settings: { slidesToShow: 1 } }
+                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } }
                 ]
             });
         });
