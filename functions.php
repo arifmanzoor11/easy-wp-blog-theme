@@ -29,8 +29,9 @@ function easywp_scripts() {
                 autoplay: true,
                 autoplaySpeed: 3000,
                 responsive: [
-                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                    { breakpoint: 768, settings: { slidesToShow: 2 } }
+                    { breakpoint: 1290, settings: { slidesToShow: 3 } },
+                    { breakpoint: 990, settings: { slidesToShow: 2 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1 } }
                 ]
             });
         });
