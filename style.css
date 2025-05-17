@@ -20,7 +20,6 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
 nav ul {
     list-style: none;
     display: flex;
@@ -35,18 +34,25 @@ nav a {
     transition: background 0.3s ease;
 }
 
-
 main {
     margin: 2rem auto;
 }
 
 h1, h2, h3 {
-    color: #6200ea;
+    color:var(--main-color);
     margin-bottom: 1rem;
 }
 
+:root{
+  --main-color: #6200ea;
+  --bg-main-color: #6200ea;
+}
+.text-main{color: var(--main-color);}
+.btn-main{background-color: var(--bg-main-color); color: #eee;}
+.btn-outline-main{border-color: var(--bg-main-color); color: var(--main-color);}
+
 a {
-    color: #6200ea;
+    color:var(--main-color);
     text-decoration: none;
 }
 
@@ -104,13 +110,9 @@ aside {
     color: #333;
     text-decoration: none;
   }
-  
   .page-numbers.current {
     background: #343a40;
     color: #fff;
     border-color: #343a40;
   }
-
-  
-  
   .dropdown-menu.show{background-color: #000;}

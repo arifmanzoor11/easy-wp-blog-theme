@@ -41,13 +41,13 @@
                 </div>
               <?php endif; ?>
               <header>
-                <h2 class="h5"><a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a></h2>
+                <h2 class="h5"><a href="<?php the_permalink(); ?>" class="text-main"><?php the_title(); ?></a></h2>
                 <p class="text-muted small mb-2"><?php echo get_the_date(); ?> | by <?php the_author(); ?></p>
               </header>
               <section class="mb-2">
                 <p><?php echo wp_trim_words(get_the_excerpt(), 30); ?></p>
               </section>
-              <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
+              <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-main">Read More</a>
             </article>
           <?php endwhile; ?>
 

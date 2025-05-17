@@ -52,8 +52,19 @@ function easywp_post_slider_shortcode($atts) {
         return '<p>No posts found.</p>';
     }
     ob_start();
-    echo '<h2 class="easywp-slider-heading">' . esc_html($category->name) . '</h2>';
     ?>
+    <div style=" display: flex
+;
+    align-items: center;
+    justify-content: space-between;">
+        <div>
+            <?php echo '<h2 class="easywp-slider-heading">' . esc_html($category->name) . '</h2>';
+             ?>
+        </div>
+        <div>
+            <a href="<?php echo get_category_link($category) ?>">View All</a>
+        </div>
+    </div>
     <div class="easywp-slick-posts ">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
             <div class="post-slide p-2">
@@ -96,7 +107,7 @@ function easywp_post_slider_shortcode($atts) {
                             <h5 class="card-title"><?php the_title(); ?></h5>
                             <p class="card-text"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 10)); ?></p>
                             <br>
-                            <a href="<?php the_permalink(); ?>" class="btn btn-dark btn-sm">Read More</a>
+                            <a href="<?php the_permalink(); ?>" class="btn btn-main btn-sm">Read More</a>
                         </div>
                     </a>
                 </div>

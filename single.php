@@ -19,7 +19,7 @@
           <?php endif; ?>
 
           <header>
-            <h1 class="h2 fw-bold mb-3"><?php the_title(); ?></h1>
+            <h1 class="h2 fw-bold mb-3 text-main"><?php the_title(); ?></h1>
             <p class="text-muted small mb-4">
               Published on <?php echo get_the_date(); ?> by <?php the_author(); ?>
             </p>
