@@ -47,6 +47,10 @@ h1, h2, h3 {
   --main-color: #6200ea;
   --bg-main-color: #6200ea;
 }
+.slick-dots li.slick-active button:before{    opacity: .75;
+    color: var(--main-color);
+}
+.slick-prev:before, .slick-next:before, .slick-dots li button:before{color: var(--main-color);}
 .text-main{color: var(--main-color);}
 .btn-main{background-color: var(--bg-main-color); color: #eee;}
 .btn-outline-main{border-color: var(--bg-main-color); color: var(--main-color);}
