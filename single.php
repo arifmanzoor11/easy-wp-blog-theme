@@ -10,7 +10,7 @@
           
           <?php if (has_post_thumbnail()) : ?>
             <div class="mb-3">
-              <?php the_post_thumbnail('large', [
+              <?php the_post_thumbnail('thumbnail', [
                 'class' => 'img-fluid rounded',
                 'alt'   => get_the_title(),
                 'loading' => 'lazy'
