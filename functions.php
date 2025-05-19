@@ -39,6 +39,7 @@ function easywp_scripts() {
 }
 add_action('wp_enqueue_scripts', 'easywp_scripts');
 
+
 // Register widget area
 function easywp_widgets_init() {
     register_sidebar([
