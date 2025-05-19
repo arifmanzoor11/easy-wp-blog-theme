@@ -90,6 +90,7 @@ function easywp_post_slider_shortcode($atts) {
                                     '#D5CABD', // Pale Champagne
                                 ];
                                 
+                                
                                 $rand_color = $modern_colors[array_rand($modern_colors)];
                                 ?>
                                 <!-- Fallback SVG with random color -->
