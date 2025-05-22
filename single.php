@@ -15,8 +15,8 @@
                       <?php
                         $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                         ?>
-                        <div class="rounded shadow-sm">
-                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
+                        <div class="">
+                            <img class="rounded shadow-sm" src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
                         </div>
                         </div>
                     <?php endif; ?>
