@@ -54,8 +54,6 @@ function easywp_widgets_init() {
 add_action('widgets_init', 'easywp_widgets_init');
 include_once('inc/easywp_post_slider_shortcode.php');
 
-
-
 function mytheme_widgets_init() {
     register_sidebar([
       'name'          => __('Sidebar', 'mytheme'),

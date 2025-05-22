@@ -1,23 +1,26 @@
 <?php get_header(); ?>
 
 <main class="container py-5">
+  
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="row">
       
       <!-- Main Post Content -->
       <div class="col-lg-8">
         <article class="border rounded bg-light p-4 mb-4 shadow-sm" role="article">
-          
-          <?php if (has_post_thumbnail()) : ?>
-            <div class="mb-3">
-              <?php the_post_thumbnail('thumbnail', [
-                'class' => 'img-fluid rounded',
-                'alt'   => get_the_title(),
-                'loading' => 'lazy'
-              ]); ?>
-            </div>
-          <?php endif; ?>
-
+ 
+            
+                  <?php if (has_post_thumbnail()) : ?>
+                    <div class="mb-3">
+                      <?php
+                        $image_url = get_the_post_thumbnail_url(get_the_ID(), $atts['image_size']);
+                        ?>
+                        <div class="ebpl-thumb">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
+                        </div>
+                        </div>
+                    <?php endif; ?>
+            
           <header>
             <h1 class="h2 fw-bold mb-3 text-main"><?php the_title(); ?></h1>
             <p class="text-muted small mb-4">
