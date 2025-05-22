@@ -15,7 +15,7 @@
                       <?php
                         $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                         ?>
-                        <div class="ebpl-thumb">
+                        <div class="">
                             <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
                         </div>
                         </div>
