@@ -13,7 +13,7 @@
                   <?php if (has_post_thumbnail()) : ?>
                     <div class="mb-3">
                       <?php
-                        $image_url = get_the_post_thumbnail_url(get_the_ID(), $atts['image_size']);
+                        $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                         ?>
                         <div class="ebpl-thumb">
                             <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
