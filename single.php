@@ -7,20 +7,24 @@
       
       <!-- Main Post Content -->
       <div class="col-lg-8">
-        <article class="border rounded bg-light p-4 mb-4 shadow-sm" role="article">
- 
-            
-                  <?php if (has_post_thumbnail()) : ?>
-                    <div class="mb-3">
-                      <?php
-                        $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                        ?>
-                        <div class="">
-                            <img class="rounded shadow-sm" src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
-                        </div>
-                        </div>
-                    <?php endif; ?>
-            
+        <article class="border rounded bg-light p-4 mb-4 shadow-sm" role="article">  
+          <?php if (has_post_thumbnail()) : ?>
+            <?php
+                $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+            ?>
+            <div class="mb-3">
+                <img 
+                    src="<?php echo esc_url($image_url); ?>" 
+                    alt="<?php the_title_attribute(); ?>" 
+                    loading="lazy" 
+                    width="150" 
+                    height="150" 
+                    class="rounded shadow-sm img-fluid"
+                    decoding="async" 
+                >
+            </div>
+        <?php endif; ?>
+
           <header>
             <h1 class="h2 fw-bold mb-3 text-main"><?php the_title(); ?></h1>
             <p class="text-muted small mb-4">
