@@ -36,7 +36,18 @@
               <?php if (has_post_thumbnail()) : ?>
                 <div class="mb-3">
                   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_post_thumbnail('medium', ['class' => 'img-fluid rounded', 'alt' => get_the_title()]); ?>
+                <?php
+                $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+            ?>
+                 <img 
+                    src="<?php echo esc_url($image_url); ?>" 
+                    alt="<?php the_title_attribute(); ?>" 
+                    loading="lazy" 
+                    width="150" 
+                    height="150" 
+                    class="rounded shadow-sm img-fluid"
+                    decoding="async" 
+                >
                   </a>
                 </div>
               <?php endif; ?>
