@@ -1,5 +1,6 @@
 <?php
 // Theme setup
+
 function easywp_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -39,19 +40,32 @@ function easywp_scripts() {
 }
 add_action('wp_enqueue_scripts', 'easywp_scripts');
 
-
-// Register widget area
+// Register multiple footer widget areas in a loop
 function easywp_widgets_init() {
-    register_sidebar([
-        'name'          => 'Main Sidebar',
-        'id'            => 'main-sidebar',
-        'before_widget' => '<div class="widget mb-4">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ]);
+    $widget_areas = [
+        'main-sidebar' => 'Main Sidebar',
+        'prefooter'    => 'Prefooter',
+        'footer-1'     => 'Footer 1',
+        'footer-2'     => 'Footer 2',
+        'footer-3'     => 'Footer 3',
+        'footer-4'     => 'Footer 4',
+    ];
+
+    foreach ($widget_areas as $id => $name) {
+        register_sidebar([
+            'name'          => __($name, 'easywp'),
+            'id'            => $id,
+            'description'   => sprintf(__('Widget area: %s', 'easywp'), $name),
+            'before_widget' => '<div class="widget mb-4">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title mb-3">',
+            'after_title'   => '</h3>',
+        ]);
+    }
 }
 add_action('widgets_init', 'easywp_widgets_init');
+
+
 include_once('inc/easywp_post_slider_shortcode.php');
 
 function mytheme_widgets_init() {
@@ -66,4 +80,5 @@ function mytheme_widgets_init() {
     ]);
   }
   add_action('widgets_init', 'mytheme_widgets_init');
+  
   

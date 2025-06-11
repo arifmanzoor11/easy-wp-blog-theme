@@ -1,8 +1,31 @@
-<footer class="bg-dark text-white py-4">
+
+
+
+<?php if (is_active_sidebar("prefooter")) : ?>
+    <div class="prefooter bg-light py-4">
+        <div class="container">
+            <?php dynamic_sidebar("prefooter"); ?>
+        </div>
+    </div>
+<?php endif; ?>
+
+<footer class="footer-widgets container py-5">
+    <div class="row">
+        <?php for ($i = 1; $i <= 4; $i++) : ?>
+            <div class="col-md-3">
+                <?php if (is_active_sidebar("footer-$i")) : ?>
+                    <?php dynamic_sidebar("footer-$i"); ?>
+                <?php endif; ?>
+            </div>
+        <?php endfor; ?>
+    </div>
+</footer>
+
+<div class="bg-dark footer-bottom text-white py-4">
     <div class="container text-center">
         <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
     </div>
-</footer>
+</div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const dropdowns = document.querySelectorAll(".menu-item-has-children");
@@ -30,8 +53,3 @@ document.addEventListener("DOMContentLoaded", function () {
 <?php wp_footer(); ?>
 </body>
 </html>
-
-
-
-
-
