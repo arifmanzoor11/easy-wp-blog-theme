@@ -76,11 +76,15 @@ h1, h2, h3 {
 }
  .footer-widgets .widget h3 {
     margin-top: 0;
-    color: var(--main-color);
+    color: var(--bg-main-color);
     text-align: left;
     font-size: 22px;
 }
-
+button.wp-block-button__link.no-border-radius {
+    background: var(--main-color);
+    border-radius: 4px !important;
+    padding: 14px 20px !important;
+}
 .footer-bottom p{margin: 0;}
 .slick-dots li.slick-active button:before{    opacity: .75;
     color: var(--main-color);
@@ -94,7 +98,10 @@ a {
     color:var(--main-color);
     text-decoration: none;
 }
-
+a.wc-block-components-button.wp-element-button.wc-block-cart__submit-button.contained, button.wc-block-components-button.wp-element-button.wc-block-components-checkout-place-order-button.contained {
+    background: var(--bg-main-color);
+    color: #fff;
+}
 a:hover {
     text-decoration: underline;
 }
