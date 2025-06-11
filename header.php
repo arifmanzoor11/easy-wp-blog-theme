@@ -8,25 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <style>
 
-.bg-main{background: var(--main-color);}
- .footer-widgets ul {padding: 0;}
-:root{
-  --main-color: #3f51b5;
-  --bg-main-color: #3f51b5;
-}
-
- .footer-widgets .menu-item {
-    text-align: left;
-    list-style: none;
-    font-size: 14px;
-    padding-left:0px
-}
- .footer-widgets .widget h3 {
-    margin-top: 0;
-    color: #333;
-    text-align: left;
-    font-size: 18px;
-}
 /* Base dropdown menu styling */
 .dropdown-menu {
     background-color: #343a40; /* dark background */
