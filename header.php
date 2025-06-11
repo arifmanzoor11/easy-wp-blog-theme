@@ -8,6 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito&display=swap" rel="stylesheet">
   <style>
 
+ .footer-widgets .menu-item {
+    text-align: left;
+    list-style: none;
+    font-size: 14px;
+    padding-left:0px
+}
+ .footer-widgets .widget h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: left;
+    font-size: 18px;
+}
+.bg-main{background-color: #3f51b5;}
+
 /* Base dropdown menu styling */
 .dropdown-menu {
     background-color: #343a40; /* dark background */
@@ -100,7 +114,7 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-main">
     <div class="container">
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
       <svg width="40" height="40" viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg">
