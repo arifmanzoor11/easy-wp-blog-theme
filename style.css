@@ -14,7 +14,7 @@ Text Domain: easy-wp-blog-theme
 Tags: blog, news, responsive, accessibility-ready, custom-logo, featured-images, editor-style
 */
 
-body{  font-family: "Inter", sans-serif;}
+body{  font-family: "Nunito", sans-serif;}
 nav {
     display: flex;
     justify-content: space-between;
@@ -47,7 +47,7 @@ h1, h2, h3 {
   --main-color: #3f51b5;
   --bg-main-color: #3f51b5;
 }
-
+.bg-main{background: var(--main-color);}
  .footer-widgets .menu-item {
     text-align: left;
     list-style: none;
@@ -60,9 +60,8 @@ h1, h2, h3 {
     text-align: left;
     font-size: 18px;
 }
-.bg-main{background-color: var(--main-color);}
 
-
+.footer-bottom p{margin: 0;}
 .slick-dots li.slick-active button:before{    opacity: .75;
     color: var(--main-color);
 }
