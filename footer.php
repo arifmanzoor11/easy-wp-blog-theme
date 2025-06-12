@@ -25,8 +25,9 @@
     <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
   </div>
 </div>
-
 <?php wp_footer(); ?>
-</body>
+<!-- Bootstrap JS + Popper (Bootstrap 5) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-whatever" crossorigin="anonymous"></script>
 
+</body>
 </html>

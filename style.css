@@ -161,4 +161,4 @@ aside {
     color: #fff;
     border-color: #343a40;
   }
-  .dropdown-menu.show{background-color: #000;}
+  ul.dropdown-menu.show{    background: #363232;}
