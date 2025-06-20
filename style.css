@@ -43,15 +43,6 @@ nav a {
   display: flex;
 }
 
-.easywp-slick-posts .slick-slide {
-  display: flex !important;
-  height: auto !important;
-}
-
-.easywp-slick-posts .slick-track {
-  display: flex !important;
-  align-items: stretch;
-}
 main {
     margin: 2rem auto;
 }
