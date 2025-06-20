@@ -5,6 +5,7 @@ on:
     branches:
       - master  # Change to 'main' if needed
 
+      
 jobs:
   ftp-deploy:
     name: 📦 FTP Deploy to Root
