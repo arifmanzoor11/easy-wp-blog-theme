@@ -26,8 +26,6 @@
   </div>
 </div>
 <?php wp_footer(); ?>
-<!-- Bootstrap JS + Popper (Bootstrap 5) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-whatever" crossorigin="anonymous"></script>
-
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

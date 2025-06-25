@@ -6,47 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <style> 
-/* Base dropdown menu styling */
-.dropdown-menu {
-    background-color: #343a40; /* dark background */
-    border: none;
-    padding: 0.5rem 0;
-    border-radius: 0.25rem;
-    min-width: 10rem;
-  }
-  
-  /* Dropdown items */
-  .dropdown-menu .dropdown-item {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.2s ease;
-  }
-  /* Hover effect */
-  .dropdown-menu .dropdown-item:hover,
-  .dropdown-menu .dropdown-item:focus {
-    background-color: #495057;
-    color: #fff;
-  }
-  /* Show dropdown when open via Bootstrap JS */
-  .navbar-nav .dropdown.show .dropdown-menu {
-    display: block;
-  }
-  
-  /* Optional: Better mobile dropdown spacing */
-  @media (max-width: 991.98px) {
-    .dropdown-menu {
-      position: static;
-      float: none;
-      width: 100%;
-      margin-top: 0;
-    }
-    .dropdown-menu .dropdown-item {
-      padding-left: 2rem;
-    }
-  }
-
-  </style>
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -66,12 +26,6 @@
           <a href="mailto:support@guitarchordslyrics.com" class="text-decoration-none text-light">support@guitarchordslyrics.com</a>
         </span>
        </small>
-        <!-- <span class="text-light">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-            <path d="M1 2.05a.5.5 0 0 1 .5-.5h2.08a.5.5 0 0 1 .48.36l.7 2.8a.5.5 0 0 1-.12.48l-1.2 1.2a11.2 11.2 0 0 0 5.2 5.2l1.2-1.2a.5.5 0 0 1 .48-.12l2.8.7a.5.5 0 0 1 .36.48v2.08a.5.5 0 0 1-.5.5H13c-6.627 0-12-5.373-12-12V2.05z"/>
-          </svg>
-          <a href="tel:+1234567890" class="text-decoration-none text-light">+1 234 567 890</a>
-        </span> -->
       </div>
 
       <!-- Right: Social Media -->
