@@ -22,15 +22,12 @@
     padding: 0.5rem 1rem;
     transition: background-color 0.2s ease;
   }
-  
   /* Hover effect */
   .dropdown-menu .dropdown-item:hover,
   .dropdown-menu .dropdown-item:focus {
     background-color: #495057;
     color: #fff;
   }
-  
-  
   /* Show dropdown when open via Bootstrap JS */
   .navbar-nav .dropdown.show .dropdown-menu {
     display: block;
@@ -44,7 +41,6 @@
       width: 100%;
       margin-top: 0;
     }
-  
     .dropdown-menu .dropdown-item {
       padding-left: 2rem;
     }
@@ -57,6 +53,8 @@
 <?php wp_body_open(); ?>
 
 <header>
+  <div id="site-loader" style="position: fixed; inset: 0; background: #000; z-index: 99999;"></div>
+
     <!-- Header Top -->
     <div style="background:#000" class="py-2">
     <div class="container d-flex justify-content-between align-items-center">
@@ -129,7 +127,7 @@
         ]);
         ?>
         <!-- Search Icon Button -->
-        <button type="button" class="btn btn-link text-light ms-3" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+        <button type="button" class="btn btn-dark text-light ms-3" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
           </svg>

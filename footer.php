@@ -25,6 +25,17 @@
     <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
   </div>
 </div>
+<script>
+  window.addEventListener('load', function () {
+    const loader = document.getElementById('site-loader');
+    if (loader) {
+      loader.style.transition = 'opacity 0.4s ease';
+      loader.style.opacity = '0';
+      setTimeout(() => loader.remove(), 400);
+    }
+  });
+</script>
+
 <?php wp_footer(); ?>
 <!-- Bootstrap JS + Popper (Bootstrap 5) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-whatever" crossorigin="anonymous"></script>
