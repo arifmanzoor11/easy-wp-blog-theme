@@ -53,8 +53,6 @@
 <?php wp_body_open(); ?>
 
 <header>
-  <div id="site-loader" style="position: fixed; inset: 0; background: #000; z-index: 99999;"></div>
-
     <!-- Header Top -->
     <div style="background:#000" class="py-2">
     <div class="container d-flex justify-content-between align-items-center">
