@@ -3,7 +3,10 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 ?>
-
+<style>
+    .woocommerce div.product form.cart{ display: flex; align-items: center;}
+    .woocommerce .quantity .qty { height: 37px; }
+</style>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'row g-5 align-items-start', $product ); ?>>
 
   <!-- Product Images -->
