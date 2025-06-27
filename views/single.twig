@@ -1,0 +1,63 @@
+<main class="container py-5">
+  <div class="row">
+    {% if post.post_type == 'post' %}
+      <div class="col-lg-8">
+        <article class="border rounded bg-light p-4 mb-4 shadow-sm" role="article">
+
+          {% if post.thumbnail %}
+            <div class="mb-3">
+              <img 
+                src="{{ post.thumbnail.src('thumbnail') }}" 
+                alt="{{ post.title }}" 
+                loading="lazy" 
+                width="150" 
+                height="150" 
+                class="rounded shadow-sm img-fluid"
+                decoding="async"
+              >
+            </div>
+          {% endif %}
+
+          <header>
+            <h1 class="h2 fw-bold mb-3 text-main">{{ post.title }}</h1>
+            <p class="text-muted small mb-4">
+              Published on {{ post.date }} by {{ post.author.name }}
+            </p>
+          </header>
+
+          <section class="post-content">
+            {{ post.content }}
+          </section>
+
+          {% if post.pagination %}
+            <div class="page-links mt-4">
+              <strong>Pages:</strong> 
+              {{ post.pagination }}
+            </div>
+          {% endif %}
+        </article>
+
+        {% if post.comments %}
+          {% include "partials/comments.twig" %}
+        {% endif %}
+      </div>
+
+      <aside class="col-lg-4">
+        {% if sidebar %}
+          <div class="bg-light p-3 border rounded mb-4">
+            {{ sidebar }}
+          </div>
+        {% else %}
+          <div class="bg-light p-3 border rounded mb-4">
+            <h5>Sidebar</h5>
+            <p>Add widgets from Appearance > Widgets.</p>
+          </div>
+        {% endif %}
+      </aside>
+    {% else %}
+      <section class="post-content">
+        {{ post.content }}
+      </section>
+    {% endif %}
+  </div>
+</main>
