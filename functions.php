@@ -107,8 +107,9 @@ function register_navwalker(){
 add_action( 'after_setup_theme', 'register_navwalker' );
 
 
-// Load Composer dependencies.
-require_once __DIR__ . '/vendor/autoload.php';
-
-// Initialize Timber.
-Timber\Timber::init();
+add_action('after_setup_theme', function() {
+    add_theme_support('woocommerce');
+    add_theme_support('woocommerce-gallery-zoom');
+    add_theme_support('woocommerce-gallery-lightbox');
+    add_theme_support('woocommerce-gallery-slider');
+});
