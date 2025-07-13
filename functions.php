@@ -83,13 +83,10 @@ function mytheme_widgets_init() {
 
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    add_theme_support('woocommerce');
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
-
-
-add_action('after_setup_theme', function() {
-    add_theme_support('woocommerce');
-    add_theme_support('woocommerce-gallery-zoom');
-    add_theme_support('woocommerce-gallery-lightbox');
-    add_theme_support('woocommerce-gallery-slider');
-});
