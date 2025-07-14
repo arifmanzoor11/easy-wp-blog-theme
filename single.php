@@ -11,6 +11,7 @@
           <?php
               $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
           ?>
+           
           <div class="mb-3">
               <img 
                   src="<?php echo esc_url($image_url); ?>" 
@@ -22,13 +23,14 @@
                   decoding="async" 
               >
           </div>
+          <?php endif; ?>
           <header>
             <h1 class="h2 fw-bold mb-3 text-main"><?php the_title(); ?></h1>
             <p class="text-muted small mb-4">
               Published on <?php echo get_the_date(); ?> by <?php the_author(); ?>
             </p>
           </header>
-        <?php endif; ?>
+       
 
           <section class="post-content">
             <?php the_content(); ?>
@@ -60,7 +62,7 @@
       </aside>
       <?php else: ?>
           <section class="post-content">
-            <?php the_content(); ?>
+            <?php //the_content(); ?>
           </section>
         <?php endif; ?>
     </div>
