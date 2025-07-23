@@ -9,12 +9,18 @@
           class="row"> <!-- Main Post Content -->
           <div class="col-lg-8">
             <article class="border rounded bg-light p-4 mb-4 shadow-sm" role="article">
-              <?php if (has_post_thumbnail()): ?>
-                <?php
-                $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                ?>
-
+              <?php if (has_post_thumbnail()):
+                $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>
                   <div class="mb-3"> <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy" width="150" height="150" class="rounded shadow-sm img-fluid" decoding="async">
+                </div>
+              <?php else: ?>
+                <div class="card-img-top mb-4">
+                  <svg class="img-fluid rounded" width="150px" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bairiya Chords Guitar Piano and Lyrics Arijit Singh Bairiya | Amitabh B">
+                    <rect width="100%" height="100%" fill="#BFAF80"></rect>
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="30">
+                      No Image
+                    </text>
+                  </svg>
                 </div>
               <?php endif; ?>
               <header>
@@ -25,9 +31,15 @@
                   by
                   <?php the_author(); ?>
                 </p>
+                <?php
+                  $category = get_the_category();
+                  if ( $category ) {
+                      echo '<div class="mb-4 post-category" style="display: flex; flex-wrap: wrap; gap:10px 5px; list-style: none; padding: 0;">Categories: ';
+                      echo '<a style=" background: #3f51b5; padding: 2px 5px; border-radius: 3px; color: white; font-size: 13px;" href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>';
+                      echo '</div>';
+                  }
+                  ?>
               </header>
-
-
               <section class="post-content"><?php the_content(); ?>
                 <?php
 
@@ -36,7 +48,7 @@
                 if ($tags) {
                   echo '<ul style="display: flex; flex-wrap: wrap; gap:10px 5px; list-style: none; padding: 0;">';
                   foreach ($tags as $tag) {
-                    echo '<li><a style="    background: #edededff; padding: 5px; border-radius: 3px; color: black; font-size: 13px;" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
+                    echo '<li><a style=" background: #edededff; padding: 5px; border-radius: 3px; color: black; font-size: 13px;" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
                   }
                   echo '</ul>';
                 }
